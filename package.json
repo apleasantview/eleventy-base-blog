@@ -48,6 +48,7 @@
 		"zod-validation-error": "^3.5.2"
 	},
 	"dependencies": {
+		"@apleasantview/eleventy-plugin-baseline": "^0.1.0-next.19",
 		"@zachleat/heading-anchors": "^1.0.5"
 	}
 }
