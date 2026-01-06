@@ -4,15 +4,18 @@
 	"description": "A starter repository for a blog web site using the Eleventy site generator.",
 	"type": "module",
 	"scripts": {
-		"build": "npx @11ty/eleventy",
 		"build-nocolor": "cross-env NODE_DISABLE_COLORS=1 npx @11ty/eleventy",
 		"build-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/",
-		"start": "npx @11ty/eleventy --serve --quiet",
 		"start-ghpages": "npx @11ty/eleventy --pathprefix=/eleventy-base-blog/ --serve --quiet",
 		"debug": "cross-env DEBUG=Eleventy* npx @11ty/eleventy",
 		"debugstart": "cross-env DEBUG=Eleventy* npx @11ty/eleventy --serve --quiet",
 		"benchmark": "cross-env DEBUG=Eleventy:Benchmark* npx @11ty/eleventy",
-		"dev": "npx @11ty/eleventy --serve"
+		"start": "npm-run-all clean dev",
+    "clean": "rimraf dist/",
+    "dev": "npx @11ty/eleventy --serve",
+    "build:eleventy": "cross-env ELEVENTY_ENV=production npx @11ty/eleventy",
+    "build": "npm-run-all clean build:*",
+    "dryrun": "npx @11ty/eleventy --dryrun"
 	},
 	"repository": {
 		"type": "git",
@@ -49,6 +52,8 @@
 	},
 	"dependencies": {
 		"@apleasantview/eleventy-plugin-baseline": "^0.1.0-next.19",
-		"@zachleat/heading-anchors": "^1.0.5"
+		"@zachleat/heading-anchors": "^1.0.5",
+		"npm-run-all": "^4.1.5",
+		"rimraf": "^6.1.2"
 	}
 }
