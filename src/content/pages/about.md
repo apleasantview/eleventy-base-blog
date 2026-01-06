@@ -1,4 +1,5 @@
 ---js
+const permalink = "/about/";
 const eleventyNavigation = {
 	key: "About",
 	order: 3
