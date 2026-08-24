@@ -20,6 +20,10 @@ export default async function (eleventyConfig) {
 
 	// Filters
 	eleventyConfig.addPlugin(pluginFilters);
+
+	eleventyConfig.addShortcode("currentBuildDate", () => {
+		return (new Date()).toISOString();
+	});
 }
 
 export const config = baselineConfig;
