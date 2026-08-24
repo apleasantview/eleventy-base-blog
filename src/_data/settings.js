@@ -16,11 +16,14 @@ export default {
 	// Site-wide head extras. Page front matter merges over these; meta dedupes on
 	// name/property/charset, link on rel + hreflang + href.
 	head: {
-		link: [],
+		link: [
+			{ rel: "stylesheet", href: "/assets/css/index.css" }
+		],
 		script: [],
 		meta: [],
 		style: []
 	},
+
 
 	// Site-wide SEO defaults (share images, Open Graph / Twitter overrides).
 	seo: {},
