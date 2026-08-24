@@ -2,6 +2,7 @@ import baseline, { config as baselineConfig } from '@apleasantview/eleventy-plug
 import settings from './src/_data/settings.js';
 
 import pluginFilters from "./_config/filters.js";
+import pluginNavigation from "@11ty/eleventy-navigation";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
@@ -24,6 +25,8 @@ export default async function (eleventyConfig) {
 	eleventyConfig.addShortcode("currentBuildDate", () => {
 		return (new Date()).toISOString();
 	});
+
+	eleventyConfig.addPlugin(pluginNavigation);
 }
 
 export const config = baselineConfig;
