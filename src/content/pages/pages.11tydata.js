@@ -1,5 +1,4 @@
 export default {
-	layout: "layouts/home.njk",
 	permalink: function ({ slug, page }) {
 		if (!slug) {
 			console.warn(`Warning: No slug found for ${page.inputPath}`);

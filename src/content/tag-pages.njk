@@ -10,13 +10,11 @@ const pagination = {
 
 const eleventyExcludeFromCollections = true;
 
+const permalink = "/tags/{{ tag | slugify }}/";
+
 const eleventyComputed = {
 	title: "Tagged '{{ tag }}'",
-	permalink: function(data) {
-		// If DuplicatePermalinkOutputError occurs, check that no tag occurs
-		// with differing case, e.g. "RSS" and "rss".
-		return `/tags/${this.slugify(data.tag)}/`;
-	}
+	slug: (data) => data.tag
 };
 ---
 <h1>Tagged “{{ tag }}”</h1>
