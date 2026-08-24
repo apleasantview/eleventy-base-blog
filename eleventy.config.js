@@ -1,6 +1,8 @@
 import baseline, { config as baselineConfig } from '@apleasantview/eleventy-plugin-baseline';
 import settings from './src/_data/settings.js';
 
+import pluginFilters from "./_config/filters.js";
+
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
 	await eleventyConfig.addPlugin(baseline(settings));
@@ -15,6 +17,9 @@ export default async function (eleventyConfig) {
 			return false;
 		}
 	});
+
+	// Filters
+	eleventyConfig.addPlugin(pluginFilters);
 }
 
 export const config = baselineConfig;
