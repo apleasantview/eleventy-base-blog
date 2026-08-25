@@ -28,7 +28,7 @@ export default {
 	// Site-wide SEO defaults (share images, Open Graph / Twitter overrides).
 	seo: {},
 
-	// Carried over from metadata.js. Used by the feed and by templates.
+	// Used by the feed and by templates.
 	author: {
 		name: "Your Name Here",
 		email: "youremailaddress@example.com",
