@@ -1,6 +1,7 @@
 ---js
 const title = "Home";
 const slug = "home";
+const description = "Latest posts from the blog.";
 const permalink = "/";
 
 const eleventyNavigation = {
@@ -10,6 +11,7 @@ const eleventyNavigation = {
 
 const numberOfLatestPostsToShow = 3;
 ---
+
 {% set postsCount = collections.posts | length %}
 {% set latestPostsCount = postsCount | min(numberOfLatestPostsToShow) %}
 <h1>Latest {{ latestPostsCount }} Post{% if latestPostsCount != 1 %}s{% endif %}</h1>

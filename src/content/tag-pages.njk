@@ -14,9 +14,11 @@ const permalink = "/tags/{{ tag | slugify }}/";
 
 const eleventyComputed = {
 	title: "Tagged '{{ tag }}'",
+	description: "Posts tagged '{{ tag }}'.",
 	slug: (data) => data.tag
 };
 ---
+
 <h1>Tagged “{{ tag }}”</h1>
 
 {% set postslist = collections[ tag ] %}

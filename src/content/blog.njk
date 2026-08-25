@@ -1,12 +1,14 @@
 ---js
 const title = "Archive";
 const slug = "blog";
+const description = "All posts, newest first.";
 
 const eleventyNavigation = {
 	key: "Archive",
 	order: 2
 };
 ---
+
 <h1>Archive</h1>
 
 {% set postslist = collections.posts %}
