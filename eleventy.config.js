@@ -4,6 +4,7 @@ import settings from './src/_data/settings.js';
 import pluginFilters from "./_config/filters.js";
 import pluginNavigation from "@11ty/eleventy-navigation";
 import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+import pluginSyntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 
 /** @param {import("@11ty/eleventy").UserConfig} eleventyConfig */
 export default async function (eleventyConfig) {
@@ -51,6 +52,10 @@ export default async function (eleventyConfig) {
 			base: settings.url,
 			author: settings.author
 		}
+	});
+
+	eleventyConfig.addPlugin(pluginSyntaxHighlight, {
+		preAttributes: { tabindex: 0 }
 	});
 }
 
