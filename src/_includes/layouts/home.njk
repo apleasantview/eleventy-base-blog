@@ -1,6 +1,8 @@
 ---
 layout: layouts/base.njk
 ---
+{%- set messageBoxPath = _baseline.paths.assets ~ "/css/message-box.css" %}
+{{ messageBoxPath | inlinePostCSS | safe }}
 <div class="message-box">
 	<ol>
 		<li>Edit <code>_data/metadata.js</code> with your blog’s information.</li>
